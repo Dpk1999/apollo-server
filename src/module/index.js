@@ -11,11 +11,14 @@ export default {
   resolvers: {
     Query: {
       ...user.Query,
-      ...trainee.Query
+      ...trainee.Query,
     },
-    Mutation:{
+    Mutation: {
       ...trainee.Mutation,
-    }
+    },
+    Subscription: {
+      ...trainee.Subscription,
+    },
   },
   typeDefs,
 };
