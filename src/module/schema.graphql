@@ -1,6 +1,6 @@
 type Query {
   getMyProfile: User!
-  getAllTrainees(skip:Int,limit:Int): getTraineeResponse!
+  getAllTrainees: [User]
   getTrainee(id: ID!): User!
 }
 
