@@ -19,11 +19,15 @@ export class UserAPI extends RESTDataSource {
     return this.post('/createToken', payload);
   }
 
-  async updateTrainee(payload) {
-    return this.put('/', payload);
+  async createUser(payload) {
+    return this.post('/', payload);
   }
 
-  async deleteTrainee(id) {
+  async updateUser(payload) {
+    return this.put(`/${payload.originalId}`, payload);
+  }
+
+  async deleteUser(id) {
     return this.delete(`/${id}`);
   }
 }

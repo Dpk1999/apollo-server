@@ -1,24 +1,27 @@
-input CreateUserInput{
-    name: String!
-    email: String!
-    role: String!
+scalar Date
+input CreateUserInput {
+  name: String!
+  email: String!
+  role: String!
+  password: String!
 }
 
-type Response{
-    _id: String!
-    originalId: String!
-    name: String!
-    email: String!
-    role: String!
-    password: String!
+type Response {
+  _id: String!
+  originalId: String!
+  name: String!
+  email: String!
+  role: String!
+  password: String!
+  createdAt: Date
 }
 
-type traineeData{
-    count: Int!
-    result: [Response!]!
+type traineeData {
+  count: Int!
+  result: [Response!]!
 }
 
-type getTraineeResponse{
-    message: String!
-    data: [traineeData!]!
+type getTraineeResponse {
+  message: String!
+  data: [traineeData!]!
 }

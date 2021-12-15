@@ -1,8 +1,12 @@
+scalar Date
 type User {
-  id: ID!
+  _id: String!
+  originalId: String!
   name: String!
   email: String!
   role: String!
+  password: String!
+  createdAt: Date
 }
 
 type Email {
@@ -18,8 +22,25 @@ type Token {
   token: String!
 }
 
-type tokenResponse {
+type TokenResponse {
   message: String!
   data: Token!
   status: String!
+}
+
+input UpdateUser {
+  name: String!
+  email: String!
+  originalId: String!
+}
+
+type DeleteUserOutput {
+  message: String!
+  status: String!
+}
+
+type UserDeletedResponse {
+  message: String!
+  status: String!
+  id: ID!
 }
