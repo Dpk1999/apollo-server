@@ -8,7 +8,7 @@ export class UserAPI extends RESTDataSource {
   }
 
   willSendRequest(request) {
-    request.headers.set('Authorization', this.context.user);
+    request.headers.set('Authorization', this.context.token);
   }
 
   getMe() {

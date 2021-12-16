@@ -8,7 +8,7 @@ export class TraineeAPI extends RESTDataSource {
   }
 
   willSendRequest(request) {
-    request.headers.set('Authorization', this.context.user);
+    request.headers.set('Authorization', this.context.token);
   }
 
   async getTrainee(limit, skip) {
